@@ -13,5 +13,6 @@ The inspection camera and the smart-buoy was built during the project period, wh
 Links: 
 
 - [Gaussian Splatt of the built harware](https://poly.cam/capture/2C4342B9-2C42-4000-ADCE-34B9547F4CDA)
+- [Gaussian Splatt attempt of a scene](https://poly.cam/capture/99aa364c-8df5-4117-9ccb-add820ba049c)
 - [Youtube Video of the project](URL)
 
