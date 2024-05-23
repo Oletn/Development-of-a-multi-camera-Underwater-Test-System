@@ -1,5 +1,10 @@
 # Development-of-a-multi-camera-Underwater-Test-System
 
+<p align="center">
+  <img src="https://github.com/Oletn/Development-of-a-multi-camera-Underwater-Test-System/assets/148344905/5fdf5a3c-9f9e-477d-aab0-6cbdcd7547e7" alt="buoy" width="45%" />
+  <img src="https://github.com/Oletn/Development-of-a-multi-camera-Underwater-Test-System/assets/148344905/700f405e-5a3f-485b-8ddc-4139eeb9b29c" alt="goedome" width="45%" />
+</p>
+
 This repo is part of a bachelor thesis in collaberation with the "Legacy of Dannevig: development of automated coastal monitoring" project by the Institute of Marine Research(IMR). The primary goal of the Legacy of Dannevig project is to develop a unit that is capable of real-time 3D reconstruction underwater. This thesis focuses on the development and design of the hardware necessary to achieve real-time 3D reconstruction in underwater environments. The hardware will be utilized in a doctoral project currently underway at the University of Agder (UiA).
 
 Discussions with the supervisors, the IMR and testing Gaussian splatting technology during the concept development phase gave the requirements for the physical unit.The findings indicated that the frame needed to be rigid to keep the cameras stable while looking at the volume of water from all angles. A versatile and robust geodesic dome design was chosen and developed to meet these criteria. 
