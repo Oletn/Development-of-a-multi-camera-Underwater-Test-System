@@ -1,4 +1,4 @@
-#Here all the files containing the code for the project are listed.
+# Here all the files containing the code for the project are listed.
 
 
 The DYnamixel_Python folder contains software for running the inspection camera system. It contains a python flask server whitch is the center of cimmunication in the software. The server also have a webpage coded in HTML and prettified with CSS to display a live video stream, importent sensor readings and control two servo motor. A script for an arduni microcontroller is also in this folder, this scripts read sensor data and control the DYNAMIXEL servos. The different scripts, microcontrollers and SBC´s communicate via serial, and with socket.io to the client.
