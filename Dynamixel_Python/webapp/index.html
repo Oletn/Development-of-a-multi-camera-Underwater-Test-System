@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamixel test HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src='/static/js/socket.io.min.js'></script>
+</head>
+<body>
+    <header>
+        <h1>Mission Control</h1>
+    </header>
+
+    <img id="video", src="/video">
+
+    <div class="bts">
+        <input type="button" value="&#x21BB"  onmousedown="ONELIGHT()" onmouseup="OFFLIGHT()">
+        <input type="button" value="&#x21BA" onmousedown="TWOLIGHT()" onmouseup="OFFLIGHT()">
+        <input type="button" value="&darr;" onmousedown="THREELIGHT()" onmouseup="OFFLIGHT()">
+        <input type="button" value="&uarr;" onmousedown="FOURLIGHT()" onmouseup="OFFLIGHT()">
+        <input type="button" value="&#x2302;" onmousedown="FIVELIGHT()" onmouseup="OFFLIGHT()">
+        <input type="button" value="Flip screen" onmousedown="flipscreen()">
+    </div>
+    
+    <div id="temperature"></div>
+    <div id="humidity"></div>
+    <div id="temperatureDHT"></div>
+    <div id="water_leakage"></div>
+    <div id="jetsontemp"></div>
+
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        var incr = 5;
+        var styr = 0; 
+
+        socket.on('humidity', function(data){
+            console.log(data);
+            document.getElementById('humidity').innerHTML = data;
+        });
+
+        socket.on('temperatureDHT', function(data){
+            console.log(data);
+            document.getElementById('temperatureDHT').innerHTML = data;
+        });
+        
+        socket.on("water_leakage", function(data){
+            console.log(data);
+            document.getElementById('water_leakage').innerHTML = data;
+        });
+
+        socket.on("jetsontemp", function(data){
+            console.log(data);
+            document.getElementById('jetsontemp').innerHTML = data;
+        });
+
+        socket.on('frame', function(frame){
+            var img = document.getElementById('video')
+            img.src = 'data:image/jpeg;base64,' + frame;
+        });
+
+        function ONELIGHT(){
+            socket.emit('motorButtons',{'status':'1'})
+        }
+    
+        function TWOLIGHT(){
+            socket.emit('motorButtons',{'status':'2'}) 
+        }
+    
+        function THREELIGHT(){
+            socket.emit('motorButtons',{'status':'3'})
+        }
+    
+        function FOURLIGHT(){
+            socket.emit('motorButtons',{'status':'4'})
+        }
+
+        function FIVELIGHT(){
+            socket.emit('motorButtons',{'status':'5'})
+        }
+        
+    
+        function OFFLIGHT(){
+            socket.emit('motorButtons',{'status':'0'})
+        }
+
+        function flipscreen(){
+            socket.emit('motorButtons',{'status':'6'})
+            if(styr == 0){
+                document.getElementById('video').style.transform = 'rotate(180deg)';
+                styr = 1;}
+            else if(styr == 1){
+                document.getElementById('video').style.transform = 'rotate(0deg)';
+                styr = 0;
+            }
+            //Communication between Arduino and html
+            //var z=0; 
+            //socket.emit('flip',{z:1})
+        }
+        
+        var video = document.getElementById('video');
+        video.addEventListener('click', function(event) {
+            var rect = video.getBoundingClientRect();
+            var x = Math.round(event.clientX - rect.left);
+            var y = Math.round(event.clientY - rect.top);
+            socket.emit('move_motor', {x: x, y: y});
+        });
+        
+       // setInterval(function() {
+         //   fetch('/temperature')
+           //     .then(response => response.json())
+             //   .then(data => {
+               //     document.getElementById('temperature').textContent = data.temperature;
+                // });
+        //}, 10000);
+    </script>
+</body>
+
+
+</html>
