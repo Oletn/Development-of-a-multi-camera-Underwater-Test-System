@@ -9,3 +9,9 @@ After testing Gaussian Splatting, the number of cameras needed was estimated to 
 To ensure the rig is deployed in a suitable position without the need for divers or ROVs an inspection camera was developed. The inspection camera is set to be mounted at the top of the geodesic dome, looking down into the volume of water and sea bottom. It can be controlled remotely to check all angles inside the dome and it can be live streamed to most phones and computers by connecting to a WLAN and accessing a specific IP address in a web browser. The inspection camera is connected by a tethered power over ethernet cable to a smart buoy. The buoy has both WLAN and LoRa capabilities for wireless communication over long and short distances.
 
 The inspection camera and the smart-buoy was built during the project period, whilst the geodesic dome was designed and some parts of it 3D printed. The inspection camera and buoy was successfully tested in the laboratory and the ocean. Additionally the geodesic dome was simulated in an virtual environment using Unreal Engine. The dome structure is set to be built during the summer 2024 at UiA. For the complete system to reach its full potential some development remains on the geodesic dome and smart buoy. 
+
+Links: 
+
+- [Gaussian Splatt of the built harware](https://poly.cam/capture/2C4342B9-2C42-4000-ADCE-34B9547F4CDA)
+- [Youtube Video of the project](URL)
+
