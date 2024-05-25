@@ -20,5 +20,5 @@ Links:
 - [Gaussian Splatt of the built harware](https://poly.cam/capture/2C4342B9-2C42-4000-ADCE-34B9547F4CDA)
 - [Gaussian Splatt attempt of table scene](https://poly.cam/capture/99aa364c-8df5-4117-9ccb-add820ba049c)
 - [Gaussian Splatt attempt in unreal underwater environment](https://poly.cam/capture/67e4c845-c7d3-43b6-981c-8c3f783e6091)
-- [Youtube Video of the project](URL)
+- [Youtube Video of the project](https://youtu.be/iwjtGxDytKI)
 
